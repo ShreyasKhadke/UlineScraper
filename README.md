@@ -39,7 +39,7 @@ The pipeline consists of several Python scripts that work together to transform 
 
 1. Clone this repository:
    ```
-   git clone https://github.com/ShreyasKhadke/uline-product-processor.git
+   git clone https://github.com/ShreyasKhadke/UlineScraper.git
    cd uline-product-processor
    ```
 
