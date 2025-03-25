@@ -1,5 +1,4 @@
 # UlineScraper
-# ULINE Product Data Processor
 
 This repository contains a data processing pipeline for extracting, cleaning, and processing product data from ULINE's website. The system automatically scrapes product pages, extracts structured data from HTML tables, performs calculations, and merges the processed data with original product metadata.
 
