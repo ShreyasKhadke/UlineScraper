@@ -1,5 +1,4 @@
 # UlineScraper
-# ULINE Product Data Processor
 
 This repository contains a data processing pipeline for extracting, cleaning, and processing product data from ULINE's website. The system automatically scrapes product pages, extracts structured data from HTML tables, performs calculations, and merges the processed data with original product metadata.
 
@@ -10,11 +9,9 @@ The pipeline consists of several Python scripts that work together to transform 
 ## Features
 
 - Web scraping with both standard HTTP requests and browser automation (Selenium)
-- Intelligent HTML cleaning to extract only relevant product information
+- HTML cleaning to extract only relevant product information
 - Handling of complex HTML tables with rowspan/colspan attributes
-- Multi-level header recognition and processing
-- Price and case quantity calculations based on business rules
-- Comprehensive logging of pipeline execution
+- Logging of pipeline execution
 
 ## Pipeline Flow
 
@@ -31,7 +28,6 @@ The pipeline consists of several Python scripts that work together to transform 
 - `H1Cleaner.py` - Cleans HTML by extracting only relevant content
 - `HtmlExtractor.py` - Extracts tables from HTML and converts to Excel
 - `cleaner.py` - Processes Excel data with business logic for pricing
-- `test.py` - Contains testing utilities for specific components
 - `flow.txt` - Detailed explanation of the data processing flow
 - `requirements.txt` - List of required Python packages
 
