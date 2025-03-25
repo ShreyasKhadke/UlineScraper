@@ -1,98 +1,104 @@
 # UlineScraper
+# ULINE Product Data Processor
+
+This repository contains a data processing pipeline for extracting, cleaning, and processing product data from ULINE's website. The system automatically scrapes product pages, extracts structured data from HTML tables, performs calculations, and merges the processed data with original product metadata.
 
 ## Overview
-This codebase implements a data processing pipeline for scraping, cleaning, and processing product data from ULINE's website. The workflow involves fetching HTML, cleaning it, extracting tables to Excel, and performing various transformations on the data.
 
-## Process Flow
+The pipeline consists of several Python scripts that work together to transform raw HTML product pages into structured data with additional computed fields. The system handles complex HTML tables, dynamic content loading, and specific business logic for calculating case quantities and pricing information.
 
-1. **HTML Scraping (HtmlFetcher.py)**
-   - Reads URLs from `uline_scrap_products.csv`
-   - Scrapes product pages with different approaches:
-     - Regular URLs: Uses standard requests library
-     - GuidedNav URLs: Uses Selenium for dynamic content loading
-   - Saves HTML files to `scraped_html/` directory
-   - Extracts H1 tags from HTML files to create cleaning commands in `input.txt`
+## Features
 
-2. **HTML Cleaning (H1Cleaner.py)**
-   - Processes HTML files from `scraped_html/` using commands generated in `input.txt`
-   - Two cleaning modes:
-     - Standard HTML: Extracts content starting from a specified heading (H1 tag)
-     - GuidedNav HTML: Extracts specific tables with id='tblChartBody'
-   - Removes unnecessary elements like navigation bars, headers, scripts
-   - Preserves product tables and CSS styling
-   - Saves cleaned HTML files to `cleaned_html/` directory
+- Web scraping with both standard HTTP requests and browser automation (Selenium)
+- Intelligent HTML cleaning to extract only relevant product information
+- Handling of complex HTML tables with rowspan/colspan attributes
+- Multi-level header recognition and processing
+- Price and case quantity calculations based on business rules
+- Comprehensive logging of pipeline execution
 
-3. **Table Extraction (HtmlExtractor.py)**
-   - Reads all cleaned HTML files from `cleaned_html/` directory
-   - Extracts tables using BeautifulSoup
-   - Special handling for GuidedNav tables with multi-level headers
-   - Processes complex table structures with rowspan/colspan
-   - Converts tables to pandas DataFrames
-   - Saves all extracted tables to `html_output.xlsx` with each HTML file as a separate sheet
+## Pipeline Flow
 
-4. **Data Cleaning & Processing (cleaner.py)**
-   - Two-phase process:
-     
-     **Phase 1: clean_excel()**
-     - Standardizes column names (making them lowercase)
-     - Extracts MODELNO., QTY./CASE, and PRICE columns
-     - Cleans price values (removing commas, extracting numeric values)
-     - Removes '*' from MODELNO values
-     - Adds empty CASE, Price, and Code columns
-     - Saves intermediate results to a temporary file
+1. **HTML Scraping** - Fetch product pages from URLs in the source CSV
+2. **HTML Cleaning** - Remove irrelevant content, keeping only product information
+3. **Table Extraction** - Convert HTML tables to structured Excel format
+4. **Data Processing** - Clean and standardize data, perform calculations
+5. **Data Merging** - Combine processed data with original product metadata
+
+## Files and Components
+
+- `main.py` - Main orchestration script that executes the pipeline steps
+- `HtmlFetcher.py` - Scrapes HTML from product URLs
+- `H1Cleaner.py` - Cleans HTML by extracting only relevant content
+- `HtmlExtractor.py` - Extracts tables from HTML and converts to Excel
+- `cleaner.py` - Processes Excel data with business logic for pricing
+- `test.py` - Contains testing utilities for specific components
+- `flow.txt` - Detailed explanation of the data processing flow
+- `requirements.txt` - List of required Python packages
+
+## Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/uline-product-processor.git
+   cd uline-product-processor
+   ```
+
+2. Create and activate a virtual environment:
+   ```
+   python -m venv venv
    
-     **Phase 2: update_case_and_price_columns()**
-     - Updates CASE column:
-       - For sheets with QTY./CASE: Multiply QTY./CASE by price multipliers
-       - For sheets without QTY./CASE: Copy price multipliers directly
-     - Updates Price column:
-       - For sheets with QTY./CASE: Calculate QTY./CASE divided by price
-     - Saves final processed data to `processed_output.xlsx`
+   # On Windows
+   venv\Scripts\activate
+   
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
 
-5. **Data Merging (cleaner.py → append_case_price())**
-   - Merges processed Excel data with the original CSV data
-   - Links products using manu_sku (CSV) and modelno. (Excel)
-   - Formats CASE and Price data as lists
-   - Generates Code column (list of 'C' values matching Price list length)
-   - Saves the final merged data to `updated_uline_scrap_products.csv`
+3. Install required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-## Orchestration (main.py)
-The entire workflow is orchestrated by `main.py` which:
-1. Executes HTML scraping
-2. Extracts H1 tags to create the input.txt file
-3. Processes each command in input.txt (running H1Cleaner.py)
-4. Runs HtmlExtractor.py to create html_output.xlsx
-5. Runs cleaner.py to process data and create final outputs
-6. Maintains a detailed time log of each step
+4. If using Selenium, ensure Chrome is installed on your system
 
-## File Relationships
+## Usage
 
-- **Input Files:**
-  - `uline_scrap_products.csv`: Original product data with URLs
-  
-- **Intermediate Files/Directories:**
-  - `scraped_html/`: Raw HTML files scraped from URLs
-  - `input.txt`: Generated commands for H1Cleaner.py
-  - `cleaned_html/`: Cleaned HTML files
-  - `html_output.xlsx`: Extracted tables from HTML
-  - `temp_cleaned_output.xlsx`: Temporary file during processing
-  - `processed_output.xlsx`: Processed data after cleaning
-  
-- **Output File:**
-  - `updated_uline_scrap_products.csv`: Final product data with added CASE, Price, and Code columns
+1. Place your input CSV file with product URLs in the project directory:
+   ```
+   # Format should include columns:
+   # manu_sku, product_name, prod_page_url, updated_on
+   ```
 
-## Data Transformations
+2. Run the main script:
+   ```
+   python main.py
+   ```
 
-The key transformations performed are:
-1. HTML → Structured tables (in Excel)
-2. Raw price/quantity data → Calculated CASE values
-3. Raw price/quantity data → Calculated Price values (units per dollar)
-4. Product SKUs → Standardized format (removing special characters)
-5. Merging processed data back with original product metadata
+3. The processed data will be available in `updated_uline_scrap_products.csv`
 
-## Special Handling
+## Customization
 
-- **GuidedNav Tables:** Special processing for tables with multi-level headers
-- **Complex Tables:** Handling of rowspan and colspan attributes
-- **Dynamic Content:** Using Selenium for pages that require scrolling
-- **Specific Formatting Requirements:** The code implements specific business logic for calculating CASE and Price values
+- To modify the scraping behavior (e.g., scrolling parameters), edit `HtmlFetcher.py`
+- To change how tables are processed, modify `HtmlExtractor.py`
+- To adjust price and case calculations, edit `cleaner.py`
+
+## Outputs
+
+The pipeline generates the following files:
+
+- `scraped_html/` - Directory containing raw HTML files
+- `cleaned_html/` - Directory containing processed HTML files
+- `html_output.xlsx` - Excel file with extracted tables
+- `processed_output.xlsx` - Excel file with cleaned and processed data
+- `updated_uline_scrap_products.csv` - Final output CSV with merged data
+- `timelog.txt` - Log file with execution timestamps
+
+## Requirements
+
+- Python 3.8+
+- Chrome browser (for Selenium-based scraping)
+- Packages listed in `requirements.txt`
+
+## Logging
+
+The pipeline maintains a detailed log of execution in `timelog.txt`, recording the start and end times of each processing step.
