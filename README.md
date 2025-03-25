@@ -30,7 +30,6 @@ The pipeline consists of several Python scripts that work together to transform 
 - `H1Cleaner.py` - Cleans HTML by extracting only relevant content
 - `HtmlExtractor.py` - Extracts tables from HTML and converts to Excel
 - `cleaner.py` - Processes Excel data with business logic for pricing
-- `test.py` - Contains testing utilities for specific components
 - `flow.txt` - Detailed explanation of the data processing flow
 - `requirements.txt` - List of required Python packages
 
