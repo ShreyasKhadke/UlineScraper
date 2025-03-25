@@ -9,11 +9,9 @@ The pipeline consists of several Python scripts that work together to transform 
 ## Features
 
 - Web scraping with both standard HTTP requests and browser automation (Selenium)
-- Intelligent HTML cleaning to extract only relevant product information
+- HTML cleaning to extract only relevant product information
 - Handling of complex HTML tables with rowspan/colspan attributes
-- Multi-level header recognition and processing
-- Price and case quantity calculations based on business rules
-- Comprehensive logging of pipeline execution
+- Logging of pipeline execution
 
 ## Pipeline Flow
 
