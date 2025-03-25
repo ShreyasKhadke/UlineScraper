@@ -40,7 +40,7 @@ The pipeline consists of several Python scripts that work together to transform 
 1. Clone this repository:
    ```
    git clone https://github.com/ShreyasKhadke/UlineScraper.git
-   cd uline-product-processor
+   cd UlineScraper
    ```
 
 2. Create and activate a virtual environment:
