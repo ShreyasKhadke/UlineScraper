@@ -220,7 +220,7 @@ def update_case_and_price_columns(input_file, output_file):
                             if price_value is not None:
                                 if isinstance(price_value, (int, float)):
                                     # Calculate the division result
-                                    division_result = qty / price_value
+                                    division_result = price_value / qty
                                     # Format as integer if it's a whole number
                                     price_values.append(str(int(division_result) if division_result == int(division_result) else round(division_result, 2)))
                                 elif isinstance(price_value, str):
@@ -228,7 +228,7 @@ def update_case_and_price_columns(input_file, output_file):
                                     clean_price_str = price_value.replace(',', '').replace('$', '').strip()
                                     if clean_price_str and clean_price_str.replace('.', '', 1).isdigit():
                                         clean_price = float(clean_price_str)
-                                        division_result = qty / clean_price
+                                        division_result = clean_price / qty 
                                         price_values.append(str(int(division_result) if division_result == int(division_result) else round(division_result, 2)))
                 
                 # Update CASE cell

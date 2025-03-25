@@ -1,29 +1,29 @@
-2025-03-25 14:12:23 - Script started
-2025-03-25 14:12:23 - Starting HTML scraping
-2025-03-25 14:13:39 - Finished HTML scraping
-2025-03-25 14:13:39 - Starting H1 text extraction
-2025-03-25 14:13:45 - Finished H1 text extraction
-2025-03-25 14:13:45 - Created/verified directory: cleaned_html
-2025-03-25 14:13:45 - Processing input.txt
-2025-03-25 14:13:45 - Running command: python H1Cleaner.py --input scraped_html/Crinkle-Paper.html --output cleaned_html\Crinkle-Paper.html --heading Crinkle Paper
-2025-03-25 14:13:46 - Completed command: python H1Cleaner.py --input scraped_html/Crinkle-Paper.html --output cleaned_html\Crinkle-Paper.html --heading Crinkle Paper
-2025-03-25 14:13:46 - Running command: python H1Cleaner.py --input scraped_html/Kraft-Indestructo-Mailers.html --output cleaned_html\Kraft-Indestructo-Mailers.html --heading Kraft Indestructo Mailers
-2025-03-25 14:13:46 - Completed command: python H1Cleaner.py --input scraped_html/Kraft-Indestructo-Mailers.html --output cleaned_html\Kraft-Indestructo-Mailers.html --heading Kraft Indestructo Mailers
-2025-03-25 14:13:46 - Running command: python H1Cleaner.py --input scraped_html/Tear-Proof-Polyethylene-Mailers.html --output cleaned_html\Tear-Proof-Polyethylene-Mailers.html --heading Tear-Proof Polyethylene Mailers
-2025-03-25 14:13:46 - Completed command: python H1Cleaner.py --input scraped_html/Tear-Proof-Polyethylene-Mailers.html --output cleaned_html\Tear-Proof-Polyethylene-Mailers.html --heading Tear-Proof Polyethylene Mailers
-2025-03-25 14:13:46 - Running command: python H1Cleaner.py --input scraped_html/Uline-Economy-Colored-Poly-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Colored-Poly-Bubble-Mailers.html --heading Uline Economy Colored Poly Bubble Mailers
-2025-03-25 14:13:47 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Economy-Colored-Poly-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Colored-Poly-Bubble-Mailers.html --heading Uline Economy Colored Poly Bubble Mailers
-2025-03-25 14:13:47 - Running command: python H1Cleaner.py --input scraped_html/Uline-Economy-Gold-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Gold-Bubble-Mailers.html --heading Uline Economy Gold Bubble Mailers
-2025-03-25 14:13:47 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Economy-Gold-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Gold-Bubble-Mailers.html --heading Uline Economy Gold Bubble Mailers
-2025-03-25 14:13:47 - Running command: python H1Cleaner.py --input scraped_html/Uline-Self-Seal-White-Bubble-Mailers.html --output cleaned_html\Uline-Self-Seal-White-Bubble-Mailers.html --heading Uline Self-Seal White Bubble Mailers
-2025-03-25 14:13:47 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Self-Seal-White-Bubble-Mailers.html --output cleaned_html\Uline-Self-Seal-White-Bubble-Mailers.html --heading Uline Self-Seal White Bubble Mailers
-2025-03-25 14:13:47 - Running command: python H1Cleaner.py --input scraped_html/White-Indestructo-Mailers.html --output cleaned_html\White-Indestructo-Mailers.html --heading White Indestructo Mailers
-2025-03-25 14:13:48 - Completed command: python H1Cleaner.py --input scraped_html/White-Indestructo-Mailers.html --output cleaned_html\White-Indestructo-Mailers.html --heading White Indestructo Mailers
-2025-03-25 14:13:48 - Running command: python H1Cleaner.py --input scraped_html/GuidedNav_184360.html --output cleaned_html/GuidedNav_184360-Cleaned.html
-2025-03-25 14:13:50 - Completed command: python H1Cleaner.py --input scraped_html/GuidedNav_184360.html --output cleaned_html/GuidedNav_184360-Cleaned.html
-2025-03-25 14:13:50 - Deleted input.txt
-2025-03-25 14:13:50 - Running HtmlExtractor.py
-2025-03-25 14:13:54 - Completed HtmlExtractor.py
-2025-03-25 14:13:54 - Running cleaner.py
-2025-03-25 14:13:56 - Completed cleaner.py
-2025-03-25 14:13:56 - Script completed in 92.81 seconds
+2025-03-25 15:21:57 - Script started
+2025-03-25 15:21:57 - Starting HTML scraping
+2025-03-25 15:23:09 - Finished HTML scraping
+2025-03-25 15:23:09 - Starting H1 text extraction
+2025-03-25 15:23:15 - Finished H1 text extraction
+2025-03-25 15:23:15 - Created/verified directory: cleaned_html
+2025-03-25 15:23:15 - Processing input.txt
+2025-03-25 15:23:15 - Running command: python H1Cleaner.py --input scraped_html/Crinkle-Paper.html --output cleaned_html\Crinkle-Paper.html --heading Crinkle Paper
+2025-03-25 15:23:16 - Completed command: python H1Cleaner.py --input scraped_html/Crinkle-Paper.html --output cleaned_html\Crinkle-Paper.html --heading Crinkle Paper
+2025-03-25 15:23:16 - Running command: python H1Cleaner.py --input scraped_html/Kraft-Indestructo-Mailers.html --output cleaned_html\Kraft-Indestructo-Mailers.html --heading Kraft Indestructo Mailers
+2025-03-25 15:23:16 - Completed command: python H1Cleaner.py --input scraped_html/Kraft-Indestructo-Mailers.html --output cleaned_html\Kraft-Indestructo-Mailers.html --heading Kraft Indestructo Mailers
+2025-03-25 15:23:16 - Running command: python H1Cleaner.py --input scraped_html/Tear-Proof-Polyethylene-Mailers.html --output cleaned_html\Tear-Proof-Polyethylene-Mailers.html --heading Tear-Proof Polyethylene Mailers
+2025-03-25 15:23:16 - Completed command: python H1Cleaner.py --input scraped_html/Tear-Proof-Polyethylene-Mailers.html --output cleaned_html\Tear-Proof-Polyethylene-Mailers.html --heading Tear-Proof Polyethylene Mailers
+2025-03-25 15:23:16 - Running command: python H1Cleaner.py --input scraped_html/Uline-Economy-Colored-Poly-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Colored-Poly-Bubble-Mailers.html --heading Uline Economy Colored Poly Bubble Mailers
+2025-03-25 15:23:16 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Economy-Colored-Poly-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Colored-Poly-Bubble-Mailers.html --heading Uline Economy Colored Poly Bubble Mailers
+2025-03-25 15:23:16 - Running command: python H1Cleaner.py --input scraped_html/Uline-Economy-Gold-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Gold-Bubble-Mailers.html --heading Uline Economy Gold Bubble Mailers
+2025-03-25 15:23:17 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Economy-Gold-Bubble-Mailers.html --output cleaned_html\Uline-Economy-Gold-Bubble-Mailers.html --heading Uline Economy Gold Bubble Mailers
+2025-03-25 15:23:17 - Running command: python H1Cleaner.py --input scraped_html/Uline-Self-Seal-White-Bubble-Mailers.html --output cleaned_html\Uline-Self-Seal-White-Bubble-Mailers.html --heading Uline Self-Seal White Bubble Mailers
+2025-03-25 15:23:17 - Completed command: python H1Cleaner.py --input scraped_html/Uline-Self-Seal-White-Bubble-Mailers.html --output cleaned_html\Uline-Self-Seal-White-Bubble-Mailers.html --heading Uline Self-Seal White Bubble Mailers
+2025-03-25 15:23:17 - Running command: python H1Cleaner.py --input scraped_html/White-Indestructo-Mailers.html --output cleaned_html\White-Indestructo-Mailers.html --heading White Indestructo Mailers
+2025-03-25 15:23:18 - Completed command: python H1Cleaner.py --input scraped_html/White-Indestructo-Mailers.html --output cleaned_html\White-Indestructo-Mailers.html --heading White Indestructo Mailers
+2025-03-25 15:23:18 - Running command: python H1Cleaner.py --input scraped_html/GuidedNav_184360.html --output cleaned_html/GuidedNav_184360-Cleaned.html
+2025-03-25 15:23:19 - Completed command: python H1Cleaner.py --input scraped_html/GuidedNav_184360.html --output cleaned_html/GuidedNav_184360-Cleaned.html
+2025-03-25 15:23:19 - Deleted input.txt
+2025-03-25 15:23:19 - Running HtmlExtractor.py
+2025-03-25 15:23:22 - Completed HtmlExtractor.py
+2025-03-25 15:23:22 - Running cleaner.py
+2025-03-25 15:23:24 - Completed cleaner.py
+2025-03-25 15:23:24 - Script completed in 87.41 seconds
