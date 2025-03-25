@@ -1,0 +1,17 @@
+# Web scraping
+requests
+beautifulsoup4
+selenium
+webdriver-manager
+
+# Data processing
+pandas
+numpy
+openpyxl
+xlrd
+
+# Regular expressions
+regex
+
+# File handling
+python-dateutil
